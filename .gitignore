@@ -1,0 +1,39 @@
+# Terraform State Files
+*.tfstate
+*.tfstate.*
+
+# Crash Logs
+crash.log
+
+# Sensitive Files
+*.tfvars
+*.tfvars.json
+
+# Terraform Plan Files
+*.tfplan
+
+# Local Terraform Files
+.terraform/
+.terraform.lock.hcl
+
+# Override Files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Provider Cache Files
+.terraformrc
+terraform.rc
+
+# Ignore backup files created by Terraform
+*.backup
+
+# Directory for storing temporary plans and state files
+terraform.tfstate.d/
+
+# MacOS system files (if applicable)
+.DS_Store
+
+# Windows system files (if applicable)
+Thumbs.db
