@@ -41,3 +41,67 @@ module "windows_app" {
   minimum_tls_version = var.minimum_tls_version
   docker_image_name = var.docker_image_name
 }
+
+# Key Vault
+module "key_vault" {
+  source              = "./modules/key-vault"
+  keyvault_name       = var.keyvault_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  enabled_for_disk_encryption = var.enabled_for_disk_encryption
+  soft_delete_retention_days = var.soft_delete_retention_days
+  purge_protection_enabled = var.purge_protection_enabled
+  sku_name = var.sku_name
+}
+
+# Bot Service
+
+module "bot_service" {
+  source              = "./modules/bot-service"
+  bot_name            = var.bot_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  sku                 = var.sku
+  env                 = var.env
+}
+
+# Cosmos DB
+
+module "cosmos_db" {
+  source              = "./modules/cosmos-db"
+  rg_name             = var.resource_group_name
+  rg_location         = var.location
+  cosmosdb_account_name = var.cosmosdb_account_name
+  cosmosdb_name       = var.cosmosdb_name
+  cosmosdb_sql_container_name = var.cosmosdb_sql_container_name
+  cosmosdb_sql_container_key_paths = var.cosmosdb_sql_container_key_paths
+  cosmosdb_sql_container_throughput = var.cosmosdb_sql_container_throughput
+  cosmosdb_account_offer_type = var.cosmosdb_account_offer_type
+  cosmosdb_account_kind = var.cosmosdb_account_kind
+  cosmosdb_account_access = var.cosmosdb_account_access
+  cosmosdb_account_consistency_level = var.cosmosdb_account_consistency_level
+  cosmosdb_account_failover_priority = var.cosmosdb_account_failover_priority
+}
+
+# Storage Account
+
+module "storage_account" {
+  source              = "./modules/storage-account"
+  storage_account_name = var.storage_account_name
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  storage_account_tier = var.storage_account_tier
+  account_replication_type = var.account_replication_type
+  env                 = var.env
+  access_tier         = var.access_tier
+}
+
+# Storage Account Containers
+
+module "storage_account_containers" {
+  source              = "./modules/storage-account-containers"
+  container_name      = var.container_name
+  container_access_type = var.container_access_type
+  storage_account_name = module.storage_account.name
+  
+}

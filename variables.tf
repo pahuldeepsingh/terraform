@@ -1,17 +1,23 @@
 # Root Module Variables
 
+# Azure Subscription ID
+variable "subscription_id" {
+  type = string
+  default = "bcfad0a4-d4be-4e66-b003-aea579c852d3"
+}
+
 # Azure Resource Group
 variable "resource_group_name" {
   description = "The name of the resource group in which to create resources."
   type        = string
-  default = "Tej_RG"
+  default = "poc_rg"
 }
 
 # Azure Region
 variable "location" {
   description = "The Azure region where resources will be created."
   type        = string
-  default     = "East US"
+  default     = "centralindia"
 }
 
 # Linux App Service Variables
@@ -116,10 +122,177 @@ variable "docker_image_name" {
   
 }
 
-
-# Azure Subscription ID
-variable "subscription_id" {
-  type = string
-  default = "cd80669d-c886-455a-b108-8299fac678e3"
+# Key Vault
+variable "keyvault_name" {
+  description = "The name of the Key Vault."
+  type        = string
+  default     = "devenvkeyvaultpoc"
 }
 
+variable "enabled_for_disk_encryption" {
+  description = "Specifies whether Azure Disk Encryption is enabled for the Key Vault."
+  type        = bool
+  default     = true
+}
+
+variable "soft_delete_retention_days" {
+  description = "The number of days that items should be retained in the Key Vault's recycle bin."
+  type        = number
+  default     = 7
+}
+
+variable "purge_protection_enabled" {
+  description = "Specifies whether purge protection is enabled for the Key Vault."
+  type        = bool
+  default     = true
+}
+
+variable "sku_name" {
+  description = "The SKU of the Key Vault."
+  type        = string
+  default     = "standard"
+}
+
+# Bot Service
+
+variable "bot_name" {
+  description = "The name of the Azure Bot Service."
+  type        = string
+  default     = "devenv-bot"
+
+}
+
+variable "sku" {
+  description = "The SKU of the Azure Bot Service."
+  type        = string
+  default     = "F0"
+}
+
+variable "env" {
+  description = "The environment in which the Azure Bot Service will be created."
+  type        = string
+  default     = "dev"
+}
+
+
+# Cosmos DB
+
+variable "cosmosdb_account_name" {
+  description = "The name of the Cosmos DB account."
+  type        = string
+  default     = "devenv-cosmosdb"
+  
+}
+
+variable "cosmosdb_name" {
+  description = "The name of the Cosmos DB database."
+  type        = string
+  default     = "devenv-cosmosdb-db"
+  
+}
+
+variable "cosmosdb_sql_container_name" {
+  description = "The name of the Cosmos DB container."
+  type        = string
+  default     = "devenv-cosmosdb-container"
+  
+}
+
+variable "cosmosdb_sql_container_key_paths" {
+  description = "The partition key paths for the Cosmos DB container."
+  type        = list(string)
+  default     = ["/"]
+  
+}
+
+variable "cosmosdb_account_offer_type" {
+  description = "The offer type for the Cosmos DB account."
+  type        = string
+  default     = "Standard"
+  
+}
+
+variable "cosmosdb_sql_container_throughput" {
+  description = "The throughput for the Cosmos DB container."
+  type        = number
+  default     = 400
+  
+}
+
+variable "cosmosdb_account_access" {
+  description = "The name of the Cosmos DB account."
+  type        = string
+  default = "true"
+  
+}
+
+variable "cosmosdb_account_kind" {
+  description = "The kind of Cosmos DB account."
+  type        = string
+  default     = "GlobalDocumentDB"
+  
+}
+
+# Cosmos DB Account Consistency Policy
+variable "cosmosdb_account_consistency_level" {
+  description = "The consistency level for the Cosmos DB account."
+  type        = string
+  default     = "Session"
+  
+}
+
+# Cosmos DB Account Geo-Replication
+
+variable "cosmosdb_account_failover_priority" {
+  description = "The failover priority for the Cosmos DB account."
+  type        = number
+  default     = 0
+  
+}
+
+# Storage Account
+
+variable "storage_account_name" {
+  description = "The name of the storage account."
+  type        = string
+  default     = "devenvstorage"
+  
+}
+
+variable "storage_account_tier" {
+  description = "The tier for the storage account."
+  type        = string
+  default     = "Standard"
+  
+}
+
+variable "account_replication_type" {
+  description = "The replication type for the storage account."
+  type        = string
+  default     = "LRS"
+  
+}
+
+variable "access_tier" {
+  description = "The access tier for the storage account."
+  type        = string
+  default     = "Hot"
+  
+}
+
+
+# Storage Account Containers
+
+variable "container_access_type" {
+  description = "The access type for the storage container."
+  type        = string
+  default     = "blob"
+  
+}
+
+variable "container_name" {
+  description = "The name of the storage container."
+  type        = string
+  default     = "devenv-container"
+  
+}
