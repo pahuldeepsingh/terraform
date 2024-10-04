@@ -140,3 +140,13 @@ module "virtual_machine" {
   vm_admin_password   = var.vm_admin_password
 
 }
+
+
+# Logic App
+
+module "name" {
+  source              = "./modules/logic-app"
+  logic_app_name      = var.logic_app_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+}
