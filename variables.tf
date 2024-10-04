@@ -3,7 +3,13 @@
 # Azure Subscription ID
 variable "subscription_id" {
   type = string
-  default = "bcfad0a4-d4be-4e66-b003-aea579c852d3"
+  default = "cd80669d-c886-455a-b108-8299fac678e3"
+}
+
+# Azure Client ID
+variable "client_id" {
+  type = string
+  default = "246cfd43-77c5-4c63-8f77-d6a19a3876ec"
 }
 
 # Azure Resource Group
@@ -126,7 +132,7 @@ variable "docker_image_name" {
 variable "keyvault_name" {
   description = "The name of the Key Vault."
   type        = string
-  default     = "devenvkeyvaultpoc"
+  default     = "devenvkeyvaultpoc001"
 }
 
 variable "enabled_for_disk_encryption" {
@@ -201,7 +207,7 @@ variable "cosmosdb_sql_container_name" {
 variable "cosmosdb_sql_container_key_paths" {
   description = "The partition key paths for the Cosmos DB container."
   type        = list(string)
-  default     = ["/"]
+  default     = ["/definition/id"]
   
 }
 
@@ -255,7 +261,7 @@ variable "cosmosdb_account_failover_priority" {
 variable "storage_account_name" {
   description = "The name of the storage account."
   type        = string
-  default     = "devenvstorage"
+  default     = "openaidevenvstorage001"
   
 }
 
@@ -295,4 +301,114 @@ variable "container_name" {
   type        = string
   default     = "devenv-container"
   
+}
+
+# Virtual Network
+
+variable "vnet_name" {
+  description = "The name of the virtual network."
+  type        = string
+  default     = "devenv-vnet"
+  
+}
+
+variable "vnet_address_space" {
+  type = list(string)
+  default = ["10.0.0.0/16"]
+}
+
+variable "jumpbox_subnet_address_prefix" {
+  type = list(string)
+  default = ["10.0.3.0/24"]
+}
+
+variable "jumpbox_subnet_name" {
+  type = string
+  default = "snet-jump-terraform-003"
+}
+
+# Virtual Machine
+
+variable "nic_name" {
+  description = "value of the nic name"
+  type = string
+  default = "nic-openai-001"
+}
+
+variable "nic_ip_name" {
+  description = "value of the nic ip name"
+  type = string
+  default = "ip-openai-001"
+}
+
+# variable "subnet_id" {
+#   description = "value of the subnet id"
+#   type = string
+
+  
+# }
+
+variable "ip_allocation_method" {
+  description = "value of the ip allocation method"
+  type = string
+  default = "Dynamic"
+}
+
+# variable "pip_id" {
+#   description = "value of the pip id"
+#   type = string
+# }
+
+variable "vm_name" {
+  description = "value of the vm name"
+  type = string
+  default = "vm-openai-001"
+}
+
+variable "vm_size" {
+  description = "value of the vm size"
+  type = string
+  default = "Standard_B1s"
+}
+
+variable "os_disk_name" {
+  description = "value of the os disk name"
+  type = string
+  default = "osdisk-openai-001"
+}
+
+variable "storage_account_type" {
+  description = "value of the storage account type"
+  type = string
+  default = "Standard_LRS"
+}
+
+variable "computer_name" {
+  description = "value of the computer name"
+  type = string
+  default = "vm-openai-001"
+}
+
+variable "vm_admin_user" {
+  description = "value of the vm admin user"
+  type = string
+  default = "azureuser"
+}
+
+variable "vm_admin_password" {
+  description = "value of the vm admin password"
+  type = string
+  default = "Password1234!"
+}
+
+variable "nsg_name" {
+  description = "value of the nsg name"
+  type = string
+  default = "nsg-openai-001"
+}
+
+variable "vm_storage_account" {
+  description = "value"
+  type = string
+  default = "openaivmstorage"
 }

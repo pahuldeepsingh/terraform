@@ -22,11 +22,11 @@ resource "azurerm_cosmosdb_sql_database" "cosmosdb_sql_database" {
   account_name        = azurerm_cosmosdb_account.cosmosdb_account.name
 }
 
-resource "azurerm_cosmosdb_sql_container" "cosmosdb_sql_container" {
-  name                = var.cosmosdb_sql_container_name
-  resource_group_name = var.rg_name
-  account_name        = azurerm_cosmosdb_account.cosmosdb_account.name
-  database_name       = azurerm_cosmosdb_sql_database.cosmosdb_sql_database.name
-  partition_key_paths = var.cosmosdb_sql_container_key_paths
-  throughput          = var.cosmosdb_sql_container_throughput
-}
+# resource "azurerm_cosmosdb_sql_container" "cosmosdb_sql_container" {
+#   name                = var.cosmosdb_sql_container_name
+#   resource_group_name = var.rg_name
+#   account_name        = azurerm_cosmosdb_account.cosmosdb_account.name
+#   database_name       = azurerm_cosmosdb_sql_database.cosmosdb_sql_database.name
+#   partition_key_paths = var.cosmosdb_sql_container_key_paths
+#   throughput          = var.cosmosdb_sql_container_throughput
+# }

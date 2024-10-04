@@ -27,3 +27,9 @@ variable "env" {
   type        = string
   
 }
+
+variable "client_id" {
+  description = "The client ID of the Azure Bot Service."
+  type        = string
+  
+}
