@@ -412,3 +412,12 @@ variable "vm_storage_account" {
   type = string
   default = "openaivmstorage"
 }
+
+# Logic App
+
+variable "logic_app_name" {
+  description = "Name of the Logic App"
+  type        = string
+  default     = "my-empty-logicapp"
+  
+}
