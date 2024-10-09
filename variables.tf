@@ -66,7 +66,7 @@ variable "paas_subnet_address_prefix" {
 
 # Virtual Machine
 
-variable "nic_name" {
+variable "linux_vm1_nic" {
   description = "value of the nic name"
   type = string
   default = "nic-openai-001"

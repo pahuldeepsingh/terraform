@@ -7,12 +7,12 @@ resource "azurerm_network_security_group" "vm_nsg" {
 
 # Create network interface
 resource "azurerm_network_interface" "linux_vm1_nic" {
-  name                = var.nic_name
+  name                = var.linux_vm1_nic_name
   location            = var.location
   resource_group_name = var.resource_group_name
 
   ip_configuration {
-    name                          = var.nic_ip_name
+    name                          = var.linux_vm1_nic_ip_name
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = var.ip_allocation_method
     public_ip_address_id          = var.linux_vm1_public_ip
