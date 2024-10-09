@@ -38,13 +38,13 @@ variable "ip_allocation_method" {
   type = string
 }
 
-variable "pip_id" {
+variable "linux_vm1_public_ip" {
   description = "value of the pip id"
   type = string
   
 }
 
-variable "vm_name" {
+variable "linux_vm1_name" {
   description = "value of the vm name"
   type = string
   

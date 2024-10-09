@@ -45,10 +45,10 @@ variable "paas_subnet_address_prefix" {
 #   type = string
 # }
 
-# variable "pip_allocation_method" {
-#   type = string
-# }
+variable "pip_allocation_method" {
+  type = string
+}
 
-# variable "linux_dev2_pip_name" {
-#   type = string
-# }
+variable "linux_vm1_pip_name" {
+  type = string
+}

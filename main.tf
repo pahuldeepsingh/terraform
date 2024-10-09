@@ -19,6 +19,27 @@ module "virtual_network" {
 
   }
 
+module "virtual_machine" {
+  source              = "./modules/virtual-machine-linux"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  nsg_name            = var.nsg_name
+  nic_name            = var.nic_name
+  nic_ip_name         = var.nic_ip_name
+  subnet_id           = module.virtual_network.jumpbox_subnet.id
+  ip_allocation_method = var.ip_allocation_method
+  pip_id              = module.virtual_network.jumpbox_public_ip.id
+  vm_name             = var.vm_name
+  vm_size             = var.vm_size
+  os_disk_name        = var.os_disk_name
+  storage_account_type = var.storage_account_type
+  computer_name       = var.computer_name
+  vm_admin_user       = var.vm_admin_user
+  vm_admin_password   = var.vm_admin_password
+
+}
+
+
 # # Virtual Machine
 # module "virtual_machine" {
 #   source              = "./modules/virtual-machine-linux"
