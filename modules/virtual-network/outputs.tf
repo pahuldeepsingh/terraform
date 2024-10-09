@@ -3,7 +3,7 @@ output "virtual_network" {
   value = azurerm_virtual_network.virtual_network.name
 }
 
-output "jumpbox_subnet" {
+output "jumpbox_subnet_id" {
     description = "value of the jumpbox subnet"
   value = azurerm_subnet.jumpbox_subnet
 }

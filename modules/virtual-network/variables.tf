@@ -39,3 +39,8 @@ variable "paas_subnet_name" {
 variable "paas_subnet_address_prefix" {
   type = list(string)
 }
+
+
+variable "vmsubnet_nsg_name" {
+  type = string
+}

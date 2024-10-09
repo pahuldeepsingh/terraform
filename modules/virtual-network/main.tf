@@ -29,4 +29,3 @@ resource "azurerm_subnet" "appservice_subnet" {
   virtual_network_name = azurerm_virtual_network.virtual_network.name
   address_prefixes     = var.appservice_subnet_address_prefix
 }
-

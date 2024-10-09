@@ -1,12 +1,13 @@
 
 # Virtual Network
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "dev-ai-assistant-mvp-rg" {
   name     = var.resource_group_name
   location = var.location
 }
+
 module "virtual_network" {
   source              = "./modules/virtual-network"
-  location            = var.location
+  location           = var.location
   resource_group_name = var.resource_group_name
   vnet_name           = var.vnet_name
   vnet_address_space  = var.vnet_address_space
@@ -19,25 +20,25 @@ module "virtual_network" {
 
   }
 
-# module "virtual_machine" {
-#   source              = "./modules/virtual-machine-linux"
-#   location            = var.location
-#   resource_group_name = var.resource_group_name
-#   nsg_name            = var.nsg_name
-#   nic_name            = var.nic_name
-#   nic_ip_name         = var.nic_ip_name
-#   subnet_id           = module.virtual_network.jumpbox_subnet.id
-#   pip_allocation_method = var.pip_allocation_method
-#   linux_vm1_public_ip = module.virtual_network.linux_vm1_public_ip.id
-#   linux_vm1_name = var.linux_vm1_name
-#   vm_size             = var.vm_size
-#   os_disk_name        = var.os_disk_name
-#   storage_account_type = var.storage_account_type
-#   computer_name       = var.computer_name
-#   vm_admin_user       = var.vm_admin_user
-#   vm_admin_password   = var.vm_admin_password
+module "virtual_machine" {
+  source              = "./modules/virtual-machine-linux"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  linux_vm1_nic_name = var.linux_vm1_nic_name
+  linux_vm1_nic_ip_name    = var.linux_vm1_nic_ip_name
+  jumpbox_subnet_id   = module.virtual-network.jumpbox_subnet_id
+  ip_allocation_method = var.pip_allocation_method
+  linux_vm1_public_ip = module.public-ip
+  linux_vm1_name = var.linux_vm1_name
+  vm_size             = var.vm_size
+  os_disk_name        = var.os_disk_name
+  storage_account_type = var.storage_account_type
+  computer_name       = var.computer_name
+  vm_admin_user       = var.vm_admin_user
+  vm_admin_password   = var.vm_admin_password
 
-# }
+
+}
 
 
 # # Virtual Machine

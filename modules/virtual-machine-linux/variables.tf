@@ -1,7 +1,3 @@
-variable "nsg_name" {
-  description = "value of the nsg name"
-  type = string
-}
 
 variable "location" {
   description = "value of the location"
@@ -27,7 +23,7 @@ variable "linux_vm1_nic_ip_name" {
   
 }
 
-variable "subnet_id" {
+variable "jumpbox_subnet_id" {
   description = "value of the subnet id"
   type = string
   

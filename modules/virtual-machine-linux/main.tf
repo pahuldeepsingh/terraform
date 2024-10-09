@@ -1,9 +1,3 @@
-resource "azurerm_network_security_group" "vm_nsg" {
-  name                = var.nsg_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
-
-}
 
 # Create network interface
 resource "azurerm_network_interface" "linux_vm1_nic" {
@@ -13,23 +7,11 @@ resource "azurerm_network_interface" "linux_vm1_nic" {
 
   ip_configuration {
     name                          = var.linux_vm1_nic_ip_name
-    subnet_id                     = var.subnet_id
+    subnet_id                     = var.jumpbox_subnet_id
     private_ip_address_allocation = var.ip_allocation_method
     public_ip_address_id          = var.linux_vm1_public_ip
   }
 }
-
-
-# Connect the security group to the network interface
-resource "azurerm_network_interface_security_group_association" "nsgconnection" {
-  network_interface_id      = azurerm_network_interface.linux_vm1_nic.id
-  network_security_group_id = azurerm_network_security_group.vm_nsg.id
-
-  depends_on = [
-    azurerm_network_interface.linux_vm1_nic
-  ]
-}
-
 
 # Create a Linux virtual machine
 resource "azurerm_linux_virtual_machine" "linux_vm1" {
