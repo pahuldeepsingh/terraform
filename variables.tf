@@ -150,6 +150,18 @@ variable "vm_storage_account" {
   default = "openaivmstorage"
 }
 
+variable "linux_vm1_public_ip" {
+  description = "value of the pip id"
+  type = string
+  
+}
+
+variable "linux_vm1_name" {
+  description = "value of the vm name"
+  type = string
+  
+}
+
 
 # # Linux App Service Variables
 # variable "linux_plan_name" {

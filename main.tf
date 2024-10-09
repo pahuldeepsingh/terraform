@@ -28,8 +28,8 @@ module "virtual_machine" {
   nic_ip_name         = var.nic_ip_name
   subnet_id           = module.virtual_network.jumpbox_subnet.id
   ip_allocation_method = var.ip_allocation_method
-  pip_id              = module.virtual_network.jumpbox_public_ip.id
-  vm_name             = var.vm_name
+  linux_vm1_public_ip = module.virtual_network.linux_vm1_public_ip.id
+  linux_vm1_name = var.linux_vm1_name
   vm_size             = var.vm_size
   os_disk_name        = var.os_disk_name
   storage_account_type = var.storage_account_type
