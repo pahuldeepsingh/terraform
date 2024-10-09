@@ -5,7 +5,7 @@ resource "azurerm_cosmosdb_account" "cosmosdb_account" {
   offer_type                    = var.cosmosdb_account_offer_type
   kind                          = var.cosmosdb_account_kind
   public_network_access_enabled = var.cosmosdb_account_access
-
+  automatic_failover_enabled = true
   consistency_policy {
     consistency_level = var.cosmosdb_account_consistency_level
   }
