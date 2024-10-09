@@ -15,13 +15,13 @@ variable "resource_group_name" {
   
 }
 
-variable "nic_name" {
+variable "linux_vm1_nic_name" {
   description = "value of the nic name"
   type = string
   
 }
 
-variable "nic_ip_name" {
+variable "linux_vm1_nic_ip_name" {
   description = "value of the nic ip name"
   type = string
   

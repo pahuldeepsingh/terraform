@@ -64,103 +64,102 @@ variable "paas_subnet_address_prefix" {
 }
 
 
-# Virtual Machine
+# # Virtual Machine
 
-variable "linux_vm1_nic" {
-  description = "value of the nic name"
-  type = string
-  default = "nic-openai-001"
-}
-
-variable "nic_ip_name" {
-  description = "value of the nic ip name"
-  type = string
-  default = "ip-openai-001"
-}
-
-# variable "subnet_id" {
-#   description = "value of the subnet id"
+# variable "linux_vm1_nic" {
+#   description = "value of the nic name"
 #   type = string
-
-  
+#   default = "dev_linux_vm1_nic"
 # }
 
-variable "ip_allocation_method" {
-  description = "value of the ip allocation method"
-  type = string
-  default = "Dynamic"
-}
+# variable "linux_vm1_nic_ip_name" {
+#   description = "value of the nic ip name"
+#   type = string
+#   default = "dev_linux_vm1_nic_ip"
+# }
 
-# variable "pip_id" {
+# # variable "subnet_id" {
+# #   description = "value of the subnet id"
+# #   type = string
+
+# # }
+
+# variable "pip_allocation_method" {
+#   description = "value of the ip allocation method"
+#   type = string
+#   default = "Dynamic"
+# }
+
+# # variable "pip_id" {
+# #   description = "value of the pip id"
+# #   type = string
+# # }
+
+# variable "vm_name" {
+#   description = "value of the vm name"
+#   type = string
+#   default = "vm-openai-001"
+# }
+
+# variable "vm_size" {
+#   description = "value of the vm size"
+#   type = string
+#   default = "Standard_B1s"
+# }
+
+# variable "os_disk_name" {
+#   description = "value of the os disk name"
+#   type = string
+#   default = "osdisk-openai-001"
+# }
+
+# variable "storage_account_type" {
+#   description = "value of the storage account type"
+#   type = string
+#   default = "Standard_LRS"
+# }
+
+# variable "computer_name" {
+#   description = "value of the computer name"
+#   type = string
+#   default = "vm-openai-001"
+# }
+
+# variable "vm_admin_user" {
+#   description = "value of the vm admin user"
+#   type = string
+#   default = "azureuser"
+# }
+
+# variable "vm_admin_password" {
+#   description = "value of the vm admin password"
+#   type = string
+#   default = "Password1234!"
+# }
+
+# variable "nsg_name" {
+#   description = "value of the nsg name"
+#   type = string
+#   default = "nsg-openai-001"
+# }
+
+# variable "vm_storage_account" {
+#   description = "value"
+#   type = string
+#   default = "openaivmstorage"
+# }
+
+# variable "linux_vm1_public_ip" {
 #   description = "value of the pip id"
 #   type = string
+  
 # }
 
-variable "vm_name" {
-  description = "value of the vm name"
-  type = string
-  default = "vm-openai-001"
-}
-
-variable "vm_size" {
-  description = "value of the vm size"
-  type = string
-  default = "Standard_B1s"
-}
-
-variable "os_disk_name" {
-  description = "value of the os disk name"
-  type = string
-  default = "osdisk-openai-001"
-}
-
-variable "storage_account_type" {
-  description = "value of the storage account type"
-  type = string
-  default = "Standard_LRS"
-}
-
-variable "computer_name" {
-  description = "value of the computer name"
-  type = string
-  default = "vm-openai-001"
-}
-
-variable "vm_admin_user" {
-  description = "value of the vm admin user"
-  type = string
-  default = "azureuser"
-}
-
-variable "vm_admin_password" {
-  description = "value of the vm admin password"
-  type = string
-  default = "Password1234!"
-}
-
-variable "nsg_name" {
-  description = "value of the nsg name"
-  type = string
-  default = "nsg-openai-001"
-}
-
-variable "vm_storage_account" {
-  description = "value"
-  type = string
-  default = "openaivmstorage"
-}
-
-variable "linux_vm1_public_ip" {
-  description = "value of the pip id"
-  type = string
+# variable "linux_vm1_name" {
+#   description = "value of the vm name"
+#   type = string
   
-}
-
-variable "linux_vm1_name" {
-  description = "value of the vm name"
-  type = string
-  
-}
+# }
 
 
 # # Linux App Service Variables
